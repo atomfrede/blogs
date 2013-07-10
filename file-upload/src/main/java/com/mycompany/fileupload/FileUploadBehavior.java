@@ -44,7 +44,7 @@ public class FileUploadBehavior extends Behavior {
         Bootstrap.renderHead(response);
 
         response.render(CssHeaderItem.forReference(
-                new CssResourceReference(FileUploadBehavior.class, "bootstrap-image-gallery.min.css")));
+                new CssResourceReference(FileUploadBehavior.class, "bootstrap-image-gallery.css")));
 
         response.render(CssHeaderItem.forReference(
                 new CssResourceReference(FileUploadBehavior.class, "jquery.fileupload-ui.css")));
@@ -54,7 +54,9 @@ public class FileUploadBehavior extends Behavior {
 
         response.render(JavaScriptHeaderItem.forReference(
                 new JavaScriptResourceReference(FileUploadBehavior.class, "jquery.ui.widget.js")));
-
+        
+    
+        
         response.render(JavaScriptHeaderItem.forReference(
                 new JavaScriptResourceReference(FileUploadBehavior.class, "jquery.iframe-transport.js")));
 
@@ -62,7 +64,7 @@ public class FileUploadBehavior extends Behavior {
                 new JavaScriptResourceReference(FileUploadBehavior.class, "tmpl.min.js")));
 
         response.render(JavaScriptHeaderItem.forReference(
-                new JavaScriptResourceReference(FileUploadBehavior.class, "load-image.min.js")));
+                new JavaScriptResourceReference(FileUploadBehavior.class, "load-image.js")));
 
         response.render(JavaScriptHeaderItem.forReference(
                 new JavaScriptResourceReference(FileUploadBehavior.class, "jquery.fileupload.js")));
@@ -72,6 +74,9 @@ public class FileUploadBehavior extends Behavior {
 
         response.render(JavaScriptHeaderItem.forReference(
                 new JavaScriptResourceReference(FileUploadBehavior.class, "jquery.fileupload-ui.js")));
+        
+        response.render(JavaScriptHeaderItem.forReference(
+                new JavaScriptResourceReference(FileUploadBehavior.class, "bootstrap-image-gallery.js")));
 
 
         PackageTextTemplate jsTmpl = new PackageTextTemplate(FileUploadBehavior.class, "main.js");

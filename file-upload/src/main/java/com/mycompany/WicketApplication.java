@@ -1,7 +1,11 @@
 package com.mycompany;
 
+import java.io.File;
+import java.io.IOException;
+
 import com.mycompany.fileupload.FileManageResourceReference;
 import com.mycompany.fileupload.FileUploadResourceReference;
+
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 
@@ -10,7 +14,7 @@ import org.apache.wicket.protocol.http.WebApplication;
  */
 public class WicketApplication extends WebApplication
 {
-   public static final String BASE_FOLDER = "/tmp/fileUploader";
+   public static String BASE_FOLDER = "/tmp/fileUploader";
 
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
@@ -29,6 +33,12 @@ public class WicketApplication extends WebApplication
 	{
 		super.init();
 
+		try{
+			BASE_FOLDER = File.createTempFile("dummy", "e").getParentFile().getAbsolutePath();
+			}catch(IOException ioe){
+				ioe.printStackTrace();
+			}
+		
         mountResource("fileManager", new FileManageResourceReference(BASE_FOLDER));
 		mountResource("fileUpload", new FileUploadResourceReference(BASE_FOLDER));
 	}

@@ -82,6 +82,13 @@ public class FileUploadResourceReference extends ResourceReference
         CharSequence url = RequestCycle.get().urlFor(new FileManageResourceReference(WicketApplication.BASE_FOLDER), params);
         return url;
     }
+    
+    private CharSequence getThumbViewUrl(FileItem fileItem){
+    	  PageParameters params = new PageParameters();
+          params.set("filename", fileItem.getName());
+          CharSequence url = RequestCycle.get().urlFor(new FileManageResourceReference(WicketApplication.BASE_FOLDER), params);
+          return url;
+    }
 
 
     private CharSequence getDeleteUrl(FileItem fileItem) {

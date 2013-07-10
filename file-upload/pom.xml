@@ -15,7 +15,7 @@
     <name>Wicket jQuery File Upload</name>
 
     <properties>
-        <wicket.version>6.5.0</wicket.version>
+        <wicket.version>6.9.0</wicket.version>
         <jetty.version>8.1.7.v20120910</jetty.version>
     </properties>
 
@@ -67,8 +67,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.5.1</version>
                 <configuration>
-                    <target>1.6</target>
-                    <source>1.6</source>
+                    <target>1.7</target>
+                    <source>1.7</source>
                 </configuration>
             </plugin>
             <plugin>
